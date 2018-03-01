@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+ get 'users/update/:id' => 'users#update'
+ 
+ get 'posts/home.html' => 'posts#home'
+
+  get 'comments/create'
+
+  get 'comments/destroy'
+
+  get 'sessions/new'
+
+  root "posts#home"
+  
+   resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
+  
+  resources :posts
+  resources :users
+  get '/search' => "posts#search"
+  get '/login'=>'sessions#new'
+  post '/login'=>'sessions#create'
+  delete '/logout'=>'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,10 @@
+<h1> 회원가입</h1>
+<% @users.each do |u|%>
+    <li><%=u.name%></li>
+<%end%>
+
+    <% if user_signed_in?%>
+    로그인 한 유저:
+    <%= current_user.name %>
+    
+    <%end%>

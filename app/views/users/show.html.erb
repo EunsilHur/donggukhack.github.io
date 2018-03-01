@@ -1,0 +1,56 @@
+<h1>[정보확인]</h1><br><br>
+
+<table class="table" border="4" bordercolor="#B0E0E6" width="400" height="150">
+    <tr align="center">
+        <td><b>이름</b></td>
+        <td><%=@user.name%> <br></td>
+    </tr>
+    <tr align="center">
+        <td><b>이메일</b></td>
+        <td><%=@user.email%> <br></td>
+    </tr>
+    <tr align="center">
+        <td><b>나이</b></td>
+        <td><%=@user.age%> <br></td>
+    </tr>
+    <tr align="center">
+        <td><b>전화번호</b></td>
+        <td><%=@user.phone_num%> <br></td>
+    </tr>
+    <tr align="center">
+        <td><b>주소</b></td>
+        <td><%=@user.address%> <br></td>
+    </tr>
+
+     <tr align="center">
+        <td><b>경력1</b></td>
+        <td><%=@user.type_career_1%> <%=@user.type_term_1%> <br></td> 
+    
+    </tr>
+    
+    <tr align="center">
+        <td><b>경력2</b></td>
+        <td><%=@user.type_career_2%> <%=@user.type_term_2%>  <br></td>
+    </tr>
+    
+    <tr align="center">
+        <td><b>경력3</b></td>
+        <td><%=@user.type_career_3%> <%=@user.type_term_3%> <br></td>
+    </tr>
+</table><br><br>
+
+<%= link_to '뒤로가기',"/" , class: 'btn btn-default' %>  
+
+<%= link_to '정보수정', edit_user_path , class: 'btn btn-default' %>   
+
+<!--    t.string   "name"-->
+<!--    t.string   "email"-->
+<!--    t.string   "password_digest"-->
+<!--    t.string   "age"-->
+<!--    t.string   "phone_num"-->
+<!--    t.text     "career"-->
+<!--    t.datetime "created_at",      null: false-->
+<!--    t.datetime "updated_at",      null: false-->
+<!--  end-->
+
+<!--end-->

@@ -1,0 +1,31 @@
+
+
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    
+    <%= f.input :title, label:"제목" %>
+    
+    <b><hr>지역<br></b>
+    <% @loc_arr.each do |l|%>
+      <label><%= f.radio_button :loc, l, class: :loc_rd %> <%= l %></label>
+    <% end %>
+    <b><hr>업종<br></b>
+    <% @type_arr.each do |l|%>
+      <label><%= f.radio_button :b_type, l, class: :b_type_rd %> <%= l %></label>
+    <% end %>
+    <hr>
+    
+    <%= f.input :content, input_html: { rows: 10 },label:"내용" %>
+  </div>
+  <div class="form-actions">
+    
+    
+    
+    <%= f.button :submit , value:"Upload" %>
+    
+    <%= link_to 'Show', @post, class: 'btn btn-info' if @post.persisted? %>
+    <%= link_to 'List', posts_path, class: 'btn btn-info' %>    
+  </div>
+  
+<% end %>

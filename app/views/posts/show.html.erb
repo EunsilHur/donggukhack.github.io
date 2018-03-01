@@ -1,0 +1,37 @@
+<div align="center">
+<h2>딱! 한 번만 도와줘</h2>
+<br>
+<table border="0" width="50%" height="190" style="border-top: 2px solid #b4dadc; text-align:center; font-size:15px;">
+  <tr style="border-bottom: 2px solid #b4dadc;">
+    <td ><strong>제목</strong></td>
+    <td><%= @post.title %></td>
+  </tr>
+  <tr style="border-bottom: 2px solid #b4dadc;">
+    <td><strong>글쓴이</strong></td>
+    <td> <%= @post.user.name %></td>
+  </tr>
+  <tr style="border-bottom: 2px solid #b4dadc;">
+    <td><strong>지역</strong></td>
+    <td><%= @post.loc %></td>
+  </tr>
+  <tr style="border-bottom: 2px solid #b4dadc;">
+    <td><strong>업종</strong></td>
+    <td><%= @post.b_type %></td>
+  </tr>
+  <tr style="border-bottom: 2px solid #b4dadc;">
+    <td><strong>내용</strong></td>
+    <td><%= @post.content %></td>
+  </tr>
+</table>
+</div>
+<br>
+<hr>
+<%= render "comments/comments" %>
+
+<%= link_to 'List', posts_path, class: 'btn btn-info' %>
+<% if user_signed_in? %>
+  <% if current_user.id == @post.user_id %>
+    <%= link_to '수정', edit_post_path(@post), class: 'btn btn-default' %>
+    <%= link_to '삭제', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+  <%end%>
+<%end%>

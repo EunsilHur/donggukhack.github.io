@@ -1,0 +1,106 @@
+
+<div style="text-align:left;">
+<table class="table" style="border-bottom: 3px solid #b4dadc">
+  <thead>
+    <tr style="background-color: #b4dadc; color: white">
+      <th>제목</th>
+      <th>지역</th>
+      <th>업종</th>
+      <th>글쓴이</th>
+    </tr>
+  </thead>
+  <div align="center">
+    <form action="/search" method="GET">
+      <%if action_name=="search" %>
+      
+      
+        <b><hr>지역<br></b>
+        <select name="loc_rd">
+            <option value="">지역 선택</option>
+             <% @loc_arr.each do |l|%>
+               <%if @loc_p==l%>
+                  <option value = <%=l%> selected="selected" ><%=l%></option>
+                <%else%>
+                  <option value = <%=l%> ><%=l%></option>
+                <%end%>  
+             <% end %>
+        </select>
+
+        
+        <b><hr>업종<br></b>
+        
+        <select name="b_type">
+            <option value="">업종</option>
+             <% @type_arr.each do |l|%>
+               <%if @type_p==l%>
+                  <option value = <%=l%> selected="selected" ><%=l%></option>
+                <%else%>
+                  <option value = <%=l%> ><%=l%></option>
+                <%end%>  
+            
+             <% end %>
+        </select>
+        
+      <%else%>
+      
+      
+      
+        <b><hr>지역<br></b>
+        <select name="loc_rd">
+            <option value="">지역 선택</option>
+             <% @loc_arr.each do |l|%>
+            <option value = <%=l%>><%=l%></option>
+             <% end %>
+        </select>
+
+        
+        <b><hr>업종<br></b>
+        
+        <select name="b_type">
+            <option value="">업종</option>
+             <% @type_arr.each do |l|%>
+            <option value = <%=l%>><%=l%></option>
+             <% end %>
+        </select>
+        
+      <%end%>
+      <hr>
+      <input type="submit" value="검색" ></div>
+    </form>
+    <br><br><br>
+  <tbody>
+    
+    <% @posts.each do |post| %>
+      <tr>
+        <td>
+            
+            <% if user_signed_in? %><br>
+                 
+                <%= link_to post.title, post %> <small>( <%= post.comments.size %> )</small> 
+            
+            <% else %>
+            
+                <%= link_to post.title, login_path %> <small>( <%= post.comments.size %> )</small> 
+            
+            <%end%>
+            
+            
+            </td>
+        <td><%= post.loc %></td>
+        <td><%= post.b_type %></td>
+        <td><%= post.user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= will_paginate @posts%>
+<div align="right">
+<% if user_signed_in? %><br>
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
+  
+<% else %>
+  <%= link_to 'New Post', login_path, class: 'btn btn-default' %>
+<%end%>
+</div>

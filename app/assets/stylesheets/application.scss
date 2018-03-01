@@ -8,5 +8,7 @@ $navbar-default-link-hover-bg: black;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import 'comments';
+	
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 body { padding-top: 60px; }

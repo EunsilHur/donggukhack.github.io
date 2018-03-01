@@ -1,0 +1,19 @@
+<h1>회원가입</h1>
+<%=form_tag users_path do%>
+    이름
+    <input type="text" name="name"><br>
+    이메일
+    <input type="email" name="email"><br>
+    패스워드
+    <input type="password" name="password"><br>
+    패스워드 확인
+    <input type="password" name="password_confirmation"><br>
+    나이
+    <input type="text" name="age"><br>
+    핸드폰번호
+    <input type="text" name="phone_num"><br>
+    경력
+    <textarea name="career"></textarea>
+    <input class="btn btn-default action-button" type="submit" value="회원가입">
+    
+<%end%>

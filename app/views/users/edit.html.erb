@@ -1,0 +1,123 @@
+<!--<h1>회원 정보 수정</h1>-->
+
+<!--<form action="/users/update/<%= @id %>" accept-charset="UTF-8" method="get">-->
+<!--    <input name="utf8" type="hidden" value="&#x2713;" />-->
+
+<!--    이름  <%=@user.name %><br>-->
+<!--    이메일<%=@user.email %><br>-->
+<!--    나이-->
+<!--    <input type="text" name="age"><br>-->
+<!--    핸드폰번호-->
+<!--    <input type="text" name="phone_num"><br>-->
+<!--    경력-->
+<!--    <textarea name="career"></textarea>-->
+<!--    <input type="submit" value="정보수정">-->
+    
+<!--</form>-->
+
+
+<h1>회원 정보 수정</h1>
+<br>
+<%=form_tag users_path do%>
+     <div class="row"> 
+            <div class="col-md-8">
+                <div class="form-group row">
+                  <label for="example-text-input" class="offset-md-5 col-md-4 col-form-label" style="font-weight:700">이름</label>
+                  <div class="col-md-4 ">
+                    <%=@user.name %>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="example-email-input" class="offset-md-5 col-md-4  col-form-label" style="font-weight:700">이메일</label>
+                  <div class="col-md-4">
+                    <%=@user.email %>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="example-password-input" class="offset-md-5 col-md-4  col-form-label ">비밀번호</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="password" placeholder="●●●●●" name="password">
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                  <label for="example-password-input" class="offset-md-5 col-md-4  col-form-label ">비밀번호 재확인</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="password" placeholder="●●●●●" name="password_confirmation">
+                  </div>
+                </div>
+                
+                
+                <div class="form-group row">
+                  <label for="example-tel-input" class="offset-md-5 col-md-4  col-form-label" style="font-weight:700">전화번호</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" name="phone_num">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="example-number-input" class="offset-md-5 col-md-4  col-form-label" style="font-weight:700">주소</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" placeholder="주소" name="address">
+                  </div>
+                </div> 
+                <div class="form-group row">
+                  <label for="example-number-input" class="offset-md-5 col-md-4  col-form-label" style="font-weight:700">나이</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" placeholder="나이" name="age">
+                  </div>
+                </div>  
+        
+            </div>
+            
+            <div class="col-md-1 offset-md-1">
+                <img style="width:400px; height:300px;" src="/assets/DDAK.png"></img>
+            </div>
+        </div>  
+          
+          <label for="example-text-input" class="offset-md-5 col-md-1 col-form-label" style="font-weight:700">경력</label>
+        <br> 
+        <br>
+                
+         <div class="row">
+                   
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="업종" name="type_career_1">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="기간" name="type_term_1">
+                  </div>
+         </div>   
+        
+        <br>
+          
+        <div class="row">
+                   <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="업종" name="type_career_2">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="기간" name="type_term_2">
+                  </div>
+        </div>   
+        
+        <br>
+         
+      <div class="row">
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="업종" name="type_career_3">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="기간" name="type_term_3">
+                  </div>
+    </div> 
+           
+         
+        
+       
+        <br>
+        
+        
+        
+    
+  <input type="submit" value="회원 정보 수정">
+    
+<%end%>

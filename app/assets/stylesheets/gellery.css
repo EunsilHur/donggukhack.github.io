@@ -1,0 +1,21 @@
+#wrap{position:relative; width:100%;}
+			
+			#main_bn {
+				margin:0 auto;
+				width:200%;
+				height:100%;
+			}
+			#main_bn img {
+				width:100%;
+				height:auto;
+			}
+            #main_bn_btn {
+                list-style-type:none;
+				position:absolute;
+				bottom:5px; left:5px;
+            }
+            #main_bn_btn li {
+                float: left; padding:0px 2px; margin-right:5px; 
+            }
+			a, a:hover, a:visited { text-decoration:none; }
+			ul li { list-style : none; }
